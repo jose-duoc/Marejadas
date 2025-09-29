@@ -16,7 +16,7 @@ public class Main {
        /***Consulta directa al sitio web***/
        try{
            //1.- Definir la URL
-           String urlStr = "https://fundacion-instituto-profesional-duoc-uc.github.io/ATY1102-Surf/Nodo%202%20(-21,-72)%20-%20Iquique.txt"; 
+           String urlStr = "https://fundacion-instituto-profesional-duoc-uc.github.io/ATY1102-Surf/Nodo%2010%20(-37,-75)%20-%20Talcahuano.txt"; 
            var url = new URL(urlStr);
            //2.- Crear un archivo temporal
            File tempFile = File.createTempFile("NodoIquique",".txt");
@@ -32,6 +32,10 @@ public class Main {
            for(Dato d : datos){
             d.mostrar();
            }
+           
+           //6.- Ola más alta
+           AnalizadorMarejadas analizador = new AnalizadorMarejadas(datos);
+           analizador.olaMasAlta();
        }
        catch(Exception e){
            e.printStackTrace();
